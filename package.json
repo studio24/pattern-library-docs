@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/studio24/pattern-library-docs#readme",
   "devDependencies": {
+    "highlight.js": "^10.2.1",
     "metalsmith": "^2.3.0"
+  },
+  "dependencies": {
+    "metalsmith-in-place": "^4.4.1"
   }
 }
