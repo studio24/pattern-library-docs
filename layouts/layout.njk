@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ title }}</title>
+
+	<link rel="stylesheet" href="styles/a11y-dark.css" />
+</head>
+<body>
+{% include "partials/header.njk" %}
+
+{% block body %}
+	This is the default contents
+{% endblock %}
+
+{% include "partials/footer.njk" %}
+</body>
+</html>
