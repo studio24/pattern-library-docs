@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/studio24/pattern-library-docs#readme",
   "devDependencies": {
+    "markdown": "^0.5.0",
     "metalsmith": "^2.3.0"
   }
 }
