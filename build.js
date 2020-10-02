@@ -1,15 +1,55 @@
-// Get our requirements, installed by npm
-const Metalsmith = require('metalsmith'); // Static site generator
-const inPlace = require('metalsmith-in-place'); // Render templating syntax in your source files
+/*
+ * Metalsmith build file
+ * Build site with `node build`
+ */
 
+const toUpper = function (string) {
+	return string.toUpperCase();
+}
+
+const spaceToDash = function (string) {
+	return string.replace(/\s+/g, "-");
+}
+
+// Get our requirements, installed by npm
+const metalsmith = require('metalsmith'); // Static site generator
+const inPlace = require('metalsmith-in-place'); // Render templating syntax in source files
+const codeHighlight = require('metalsmith-code-highlight');
+const layouts = require('metalsmith-layouts'); // Apply layouts to source files
+
+const templateConfig = {
+	engineOptions: {
+		noCache: true, // never use a cache and recompile templates each time
+		// highlight: function(code, language) {
+		// 	const hljs = require('highlight.js');
+		// 	const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+		// 	return hljs.highlight(validLanguage, code).value;
+		// },
+		filters: {
+			toUpper: toUpper,
+			spaceToDash: spaceToDash,
+		}
+	}
+}
 
 // Run Metalsmith in the current directory
-Metalsmith(__dirname)
-	.clean(true) // Clean the build directory
+metalsmith(__dirname)
+	.clean(true) // Clean the destination directory before build
 	.source('src') // Set page source directory
 	.destination('build') // Set destination directory
 
+	// Render templating syntax in source files
+	.use(inPlace(templateConfig))
+
+	.use(codeHighlight())
+
+	// Apply layouts to source files
+	.use(layouts(templateConfig))
+
 	// Tell Metalsmith to build the site
-	.build(function(err, files) {
-		if (err) { throw err; }
+	.build(function(error) {
+		if (error) {
+			throw error;
+		}
+		console.log('Build finished');
 	});
