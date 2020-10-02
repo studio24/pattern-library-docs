@@ -32,6 +32,9 @@ vendor
 # Bower
 bower_components
 
+# Metalsmith
+build
+
 # NPM
 node_modules
 
