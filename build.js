@@ -14,12 +14,13 @@ const spaceToDash = function (string) {
 // Get our requirements, installed by npm
 const metalsmith = require('metalsmith'); // Static site generator
 const inPlace = require('metalsmith-in-place'); // Render templating syntax in source files
-const codeHighlight = require('metalsmith-code-highlight');
+const codeHighlight = require('metalsmith-code-highlight'); // Syntax highlighter
 const layouts = require('metalsmith-layouts'); // Apply layouts to source files
 const serve = require('metalsmith-serve'); // Simple http server for development
 const watch = require('metalsmith-watch'); // Watch for file changes and trigger rebuilds
 
 const templateConfig = {
+	directory: 'views',
 	engineOptions: {
 		noCache: true, // never use a cache and recompile templates each time
 		filters: {
@@ -32,12 +33,13 @@ const templateConfig = {
 // Run Metalsmith in the current directory
 metalsmith(__dirname)
 	.clean(true) // Clean the destination directory before build
-	.source('src') // Set page source directory
-	.destination('build') // Set destination directory
+	.source('./src') // Set page source directory
+	.destination('./build') // Set destination directory
 
 	// Render templating syntax in source files
 	.use(inPlace(templateConfig))
 
+	// Syntax highlighter
 	.use(codeHighlight())
 
 	// Apply layouts to source files
