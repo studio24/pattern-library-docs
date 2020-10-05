@@ -1,0 +1,35 @@
+/* Colour swatches */
+
+.swatches {
+
+	display: flex;
+
+}
+
+.color-swatch-tile {
+
+	width: 160px;
+	padding: 1rem;
+	box-shadow: 0 0 10px #ccc;
+	margin-right: 1rem;
+
+}
+
+.color-swatch {
+
+	height: 150px;
+
+}
+
+.color-name {
+
+	font-weight: bold;
+	margin: 0 0 3px 0;
+
+}
+
+.color-notes {
+
+	font-size: 0.9rem;
+
+}

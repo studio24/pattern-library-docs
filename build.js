@@ -59,6 +59,7 @@ metalsmith(__dirname)
 		paths: {
 			'${source}/**/*': true,
 			"layouts/**/*": "**/*",
+			"macros/**/*": "**/*"
 		}
 	}))
 
