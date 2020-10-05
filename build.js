@@ -22,11 +22,6 @@ const watch = require('metalsmith-watch'); // Watch for file changes and trigger
 const templateConfig = {
 	engineOptions: {
 		noCache: true, // never use a cache and recompile templates each time
-		// highlight: function(code, language) {
-		// 	const hljs = require('highlight.js');
-		// 	const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
-		// 	return hljs.highlight(validLanguage, code).value;
-		// },
 		filters: {
 			toUpper: toUpper,
 			spaceToDash: spaceToDash,
@@ -58,8 +53,8 @@ metalsmith(__dirname)
 	.use(watch({
 		paths: {
 			'${source}/**/*': true,
-			"layouts/**/*": "**/*",
-			"macros/**/*": "**/*"
+			'layouts/**/*': '**/*',
+			'macros/**/*': '**/*'
 		}
 	}))
 
