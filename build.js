@@ -17,8 +17,7 @@ const collections = require('metalsmith-collections'); // Group content into col
 const inPlace = require('metalsmith-in-place'); // Render templating syntax in source files
 const codeHighlight = require('metalsmith-code-highlight'); // Syntax highlighter
 const layouts = require('metalsmith-layouts'); // Apply layouts to source files
-const serve = require('metalsmith-serve'); // Simple http server for development
-const watch = require('metalsmith-watch'); // Watch for file changes and trigger rebuilds
+const browserSync = require('metalsmith-browser-sync'); // Local server
 
 const templateConfig = {
 	directory: 'views',
@@ -53,19 +52,10 @@ metalsmith(__dirname)
 	// Apply layouts to source files
 	.use(layouts(templateConfig))
 
-	// Serve
-	.use(serve({
-		port: 8081,
-		verbose: true
-	}))
-
-	// Watch
-	.use(watch({
-		paths: {
-			'${source}/**/*': true,
-			'layouts/**/*': '**/*',
-			'macros/**/*': '**/*'
-		}
+	// Local server
+	.use(browserSync({
+		server: 'build',
+		files: ['src/**/*', 'views/**/*.njk', 'macros/**/*.njk']
 	}))
 
 	// Tell Metalsmith to build the site
