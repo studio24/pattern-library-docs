@@ -13,6 +13,7 @@ const spaceToDash = function (string) {
 
 // Get our requirements, installed by npm
 const metalsmith = require('metalsmith'); // Static site generator
+const collections = require('metalsmith-collections'); // Group content into collections
 const inPlace = require('metalsmith-in-place'); // Render templating syntax in source files
 const codeHighlight = require('metalsmith-code-highlight'); // Syntax highlighter
 const layouts = require('metalsmith-layouts'); // Apply layouts to source files
@@ -41,6 +42,13 @@ metalsmith(__dirname)
 
 	// Syntax highlighter
 	.use(codeHighlight())
+
+	// Group content into collections
+	.use(collections({
+		layouts: {
+			pattern: 'layouts/**/*'
+		}
+	}))
 
 	// Apply layouts to source files
 	.use(layouts(templateConfig))

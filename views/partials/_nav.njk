@@ -1,0 +1,8 @@
+<nav>
+	<ul>
+		{% for layout in collections.layouts %}
+{#			{{ layout | dump }}#}
+			<li><a href="{{ layout.path }}">{{ layout.title }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>
