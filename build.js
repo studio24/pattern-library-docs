@@ -47,7 +47,7 @@ metalsmith(__dirname)
 	// Copy assets into build directory
 	.use(assets({
 		src: './assets',
-		dest: './build'
+		dest: './assets'
 	}))
 
 	// Apply layouts to source files
@@ -56,7 +56,7 @@ metalsmith(__dirname)
 	// Local server
 	.use(browserSync({
 		server: 'build',
-		files: ['src/**/*', 'views/**/*.njk', 'macros/**/*.njk']
+		files: ['assets/**/*', 'src/**/*', 'views/**/*', 'macros/**/*']
 	}))
 
 	// Tell Metalsmith to build the site
