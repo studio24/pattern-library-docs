@@ -1,0 +1,15 @@
+{% extends "two-col.njk" %}
+
+{% block main %}
+	{{ contents | safe }}
+{% endblock %}
+
+{% block sidemenu %}
+	<nav>
+		<ul>
+			{% for style in collections.styles %}
+				<li><a href="/{{ style.path }}">{{ style.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ title }}</title>
+
+	<link rel="stylesheet" href="../assets/styles.css" />
+	<link rel="stylesheet" href="../assets/a11y-dark.css" />
+</head>
+<body>
+{% include "partials/_header.njk" %}
+{% include "partials/_nav.njk" %}
+
+<div class="l-sidebar">
+	<div>
+		<div class="not-sidebar">
+			{%  block main %}
+			{% endblock %}
+		</div>
+		<div class="sidebar">
+			{% block sidemenu %}
+			{% endblock %}
+		</div>
+	</div>
+</div>
+
+{% include "partials/_footer.njk" %}
+</body>
+</html>

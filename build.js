@@ -3,30 +3,19 @@
  * Build site with `node build`
  */
 
-const toUpper = function (string) {
-	return string.toUpperCase();
-}
-
-const spaceToDash = function (string) {
-	return string.replace(/\s+/g, "-");
-}
-
 // Get our requirements, installed by npm
 const metalsmith = require('metalsmith'); // Static site generator
 const collections = require('metalsmith-collections'); // Group content into collections
 const inPlace = require('metalsmith-in-place'); // Render templating syntax in source files
 const codeHighlight = require('metalsmith-code-highlight'); // Syntax highlighter
 const layouts = require('metalsmith-layouts'); // Apply layouts to source files
+const assets = require('metalsmith-static'); // Copy assets into build directory without manipulating
 const browserSync = require('metalsmith-browser-sync'); // Local server
 
 const templateConfig = {
 	directory: 'views',
 	engineOptions: {
 		noCache: true, // never use a cache and recompile templates each time
-		filters: {
-			toUpper: toUpper,
-			spaceToDash: spaceToDash,
-		}
 	}
 }
 
@@ -44,9 +33,21 @@ metalsmith(__dirname)
 
 	// Group content into collections
 	.use(collections({
-		layouts: {
-			pattern: 'layouts/**/*'
+		components: {
+			pattern: ['components/**/*', '!components/index.html']
+		},
+		patterns: {
+			pattern: ['patterns/**/*', '!patterns/index.html']
+		},
+		styles: {
+			pattern: ['styles/**/*', '!styles/index.html']
 		}
+	}))
+
+	// Copy assets into build directory
+	.use(assets({
+		src: './assets',
+		dest: './build'
 	}))
 
 	// Apply layouts to source files

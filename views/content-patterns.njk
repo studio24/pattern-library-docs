@@ -1,0 +1,15 @@
+{% extends "two-col.njk" %}
+
+{% block main %}
+	{{ contents | safe }}
+{% endblock %}
+
+{% block sidemenu %}
+	<nav>
+		<ul>
+			{% for pattern in collections.patterns %}
+				<li><a href="/{{ pattern.path }}">{{ pattern.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</nav>
+{% endblock %}

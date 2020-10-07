@@ -3,16 +3,18 @@
 <head>
 	<title>{{ title }}</title>
 
-	<link rel="stylesheet" href="css/styles.css" />
-	<link rel="stylesheet" href="css/a11y-dark.css" />
+	<link rel="stylesheet" href="../assets/styles.css" />
+	<link rel="stylesheet" href="../assets/a11y-dark.css" />
 </head>
 <body>
 {% include "partials/_header.njk" %}
 {% include "partials/_nav.njk" %}
 
+<main>
 {% block main %}
-	This is the default contents
+This is the default content.
 {% endblock %}
+</main>
 
 {% include "partials/_footer.njk" %}
 </body>
