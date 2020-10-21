@@ -33,7 +33,7 @@ vendor
 bower_components
 
 # Metalsmith
-build
+html-build
 
 # NPM
 node_modules

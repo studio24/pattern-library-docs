@@ -23,7 +23,7 @@ const templateConfig = {
 metalsmith(__dirname)
 	.clean(true) // Clean the destination directory before build
 	.source('./src') // Set page source directory
-	.destination('./build') // Set destination directory
+	.destination('./html-build') // Set destination directory
 
 	// Render templating syntax in source files
 	.use(inPlace(templateConfig))
@@ -55,7 +55,7 @@ metalsmith(__dirname)
 
 	// Local server
 	.use(browserSync({
-		server: 'build',
+		server: 'html-build',
 		files: ['assets/**/*', 'src/**/*', 'views/**/*', 'macros/**/*']
 	}))
 
