@@ -12,21 +12,24 @@
 	<link rel="stylesheet" href="../assets/design-system/a11y-dark.css" media="screen" />
 </head>
 <body>
-{% include "partials/_header.njk" %}
-{% include "partials/_nav.njk" %}
+	<div class="wrap">
+		{% include "partials/_header.njk" %}
 
-<div class="l-sidebar">
-	<div>
-		<div class="not-sidebar">
-			{%  block main %}
-			{% endblock %}
-		</div>
-		<div class="sidebar">
-			{% block sidemenu %}
-			{% endblock %}
+		<div class="l-center l-sidebar">
+			<div>
+				<div class="sidebar">
+					{% block sidemenu %}
+					{% endblock %}
+				</div>
+				<div class="not-sidebar">
+					<main class="l-stack">
+						{% block main %}
+						{% endblock %}
+					</main>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
 
 {% include "partials/_footer.njk" %}
 </body>

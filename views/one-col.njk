@@ -12,14 +12,17 @@
 	<link rel="stylesheet" href="../assets/design-system/a11y-dark.css" media="screen" />
 </head>
 <body>
-{% include "partials/_header.njk" %}
-{% include "partials/_nav.njk" %}
+	<div class="wrap">
 
-<main>
-{% block main %}
-This is the default content.
-{% endblock %}
-</main>
+		{% include "partials/_header.njk" %}
+
+		<main class="l-center l-stack">
+			{% block main %}
+				This is the default content.
+			{% endblock %}
+		</main>
+	</div>
+
 
 {% include "partials/_footer.njk" %}
 </body>
