@@ -36,8 +36,8 @@ metalsmith(__dirname)
 		components: {
 			pattern: ['components/**/*', '!components/index.html']
 		},
-		patterns: {
-			pattern: ['patterns/**/*', '!patterns/index.html']
+		templates: {
+			pattern: ['templates/**/*', '!templates/index.html']
 		},
 		styles: {
 			pattern: ['styles/**/*', '!styles/index.html']
