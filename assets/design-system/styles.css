@@ -6,11 +6,8 @@
 }
 
 .l-cluster > * {
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: row;
 	flex-direction: row;
-	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin: calc(1rem / 2 * -1);
 }
@@ -29,11 +26,8 @@
 }
 
 .l-sidebar > * {
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: row;
 	flex-direction: row;
-	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin: calc(1.7rem / 2 * -1);
 }
@@ -43,16 +37,11 @@
 }
 
 .l-sidebar .sidebar {
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	-ms-flex-preferred-size: 20rem;
 	flex-basis: 20rem;
-	-ms-flex-positive: 1;
+	flex-direction: column;
 	flex-grow: 1;
+	justify-content: flex-start;
 }
 
 .l-sidebar .sidebar > * + * {
@@ -60,16 +49,11 @@
 }
 
 .l-sidebar .not-sidebar {
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	-ms-flex-preferred-size: 0;
 	flex-basis: 0;
-	-ms-flex-positive: 999;
+	flex-direction: column;
 	flex-grow: 999;
+	justify-content: flex-start;
 	min-width: calc(55% - 1.7rem);
 }
 
@@ -82,9 +66,7 @@
 # Header
  */
 .global-header > a {
-	-ms-flex-align: center;
 	align-items: center;
-	display: -ms-inline-flexbox;
 	display: inline-flex;
 	text-decoration: none;
 }
@@ -103,10 +85,10 @@
 }
 
 .color-swatch-tile {
-	width: 160px;
-	padding: 1rem;
 	box-shadow: 0 0 10px #ccc;
 	margin-right: 1rem;
+	padding: 1rem;
+	width: 160px;
 }
 
 .color-swatch {
