@@ -35,6 +35,9 @@ bower_components
 # Metalsmith
 html-build
 
+# Apollo
+assets/apollo-dist
+
 # NPM
 node_modules
 

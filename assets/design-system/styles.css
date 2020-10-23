@@ -755,29 +755,6 @@ main > * {
 
 
 /*------------------------------------*\
-	#Global footer
-\*------------------------------------*/
-.global-footer {
-	-ms-grid-row: 2;
-	grid-row-start: 2;
-	grid-row-end: 3;
-	padding-bottom: 1rem;
-	padding-top: 1rem;
-}
-
-
-
-/*------------------------------------*\
-	#Code snippet containers
-\*------------------------------------*/
-.hljs.hljs {
-	max-width: 43rem;
-	padding: 1rem;
-}
-
-
-
-/*------------------------------------*\
 	Design swatches
 \*------------------------------------*/
 .swatches {
@@ -802,4 +779,38 @@ main > * {
 
 .color-notes {
 	font-size: 0.9rem;
+}
+
+
+
+/*------------------------------------*\
+	#Code snippet containers
+\*------------------------------------*/
+.hljs.hljs {
+	max-width: 43rem;
+	padding: 1rem;
+}
+
+
+
+/*------------------------------------*\
+	#Showcase iframes
+\*------------------------------------*/
+.showcase {
+	border: solid 1px;
+	display: block;
+	max-width: 100%;
+}
+
+
+
+/*------------------------------------*\
+	#Global footer
+\*------------------------------------*/
+.global-footer {
+	-ms-grid-row: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
 }
